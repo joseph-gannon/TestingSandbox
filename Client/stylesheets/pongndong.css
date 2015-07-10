@@ -1,0 +1,58 @@
+/* CSS declarations go here */
+
+
+
+/*Leaderboard stuff*/
+
+/*.selected{*/
+    /*background-color: yellow;*/
+/*}*/
+
+h3
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table,th,td
+{
+    border-spacing: 1px;
+    width: 20%;
+    text-align: center;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+table#leaderBoardTable tr:nth-child(even) {
+    background-color: #eee;
+}
+table#leaderBoardTable tr:nth-child(odd) {
+    background-color: #fff;
+}
+table#leaderBoardTable tr:hover
+{
+    background-color: yellow;
+}
+table#leaderBoardTable tr::selection
+{
+    background-color: yellow;
+}
+table tr.active {background: yellow;}
+
+#addPlayerForm
+{
+    width: 250px;
+    margin: 0 auto;
+}
+#addPlayerError
+{
+    background-color: indianred;
+
+}
+
+#loginForm
+{
+    width: 250px;
+    margin: 0 auto;
+}
+

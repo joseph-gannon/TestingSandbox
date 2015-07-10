@@ -1,0 +1,16 @@
+<Template name="UserHome">
+    {{> UserProfile}}
+    {{> leaderBoard}}
+</Template>
+
+<template name="UserProfile">
+    <h4>User Profile</h4>
+    {{#with currentUser}}
+        <p>UserName: {{username}}</p>
+        {{#with profile}}
+            <p>Rating: {{rating}}</p>
+            <p>Wins: {{playerWins}}</p>
+            <p>Losses: {{playerLoses}}</p>
+        {{/with}}
+    {{/with}}
+</template>

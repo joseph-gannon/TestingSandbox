@@ -11,7 +11,7 @@
 <body>
 
     <!--{{> login}}-->
-    {{> loginButtons}}
+    <!--{{> loginButtons}}-->
     <!--{{> register}}-->
     <!--{{> leaderBoard}}-->
     <!--{{> addPlayerForm}}-->
@@ -24,24 +24,6 @@
         <p align="center">Or</p>
         <p><input id="registerBtn" type="submit" value="Register"  class="pure-button pure-button-primary" style="width: 100%" onclick="location.href='register';"></p>
     </form>
-</template>
-<template name="leaderBoard">
-    <div>
-        <H3 align="center">Leader Board</H3>
-        <table id="leaderBoardTable" class="pure-table">
-            <tbody>
-                <th>Player Name</th>
-                <th>Games Played</th>
-                {{#each player}}
-                <tr>
-                    <td class="playerName {{selectedClass}}">{{name}}</td>
-                    <td class="gamesPlayed {{selectedClass}}">{{gamesPlayed}}</td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-        <br>
-    </div>
 </template>
 
 <template name="addPlayerForm">

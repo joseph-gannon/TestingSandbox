@@ -11,7 +11,16 @@ if(Meteor.isClient) {
             var password = $('[name=password]').val();
             Meteor.loginWithPassword(email, password, function(error){
                 console.log("logging in!");
-                console.log(error.reason);
+                if(error)
+                {
+                    console.log(error.reason);
+                }
+                else
+                {
+                    toastr.info("Login Successful!");
+                    Router.go("/UserHome");
+                }
+
             });
 
         }

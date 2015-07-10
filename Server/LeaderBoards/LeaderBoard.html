@@ -1,0 +1,40 @@
+
+<template name="leaderBoard">
+    <div>
+        <H3 align="center">Leader Board</H3>
+        <table id="leaderBoardTable" class="pure-table">
+            <tbody>
+            <th>Player Name</th>
+            <th>Wins</th>
+            <th>Losses</th>
+            <th>Games Played</th>
+            <th>Rating</th>
+            {{#each user}}
+
+                <tr>
+                    <td class="playerName {{selectedClass}}">{{username}}</td>
+                    {{#with profile}}
+                        <td class="playerWins {{selectedClass}}">{{playerWins}}</td>
+                        <td class="playerLosses {{selectedClass}}">{{playerLoses}}</td>
+                        <td class="gamesPlayed {{selectedClass}}">{{gamesPlayed}}</td>
+                        <td class="rating {{selectedClass}}">{{rating}}</td>
+                    {{/with}}
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        <br>
+    </div>
+        <div class="addResultForm">
+            <form class="pure-form pure-form-stacked" id="addResultForm">
+                Opponent Name:
+                <input id="opponentNameTxt" type="text">
+                Your Score:
+                <input id="yourScoreTxt" type="text">
+                Their Score:
+                <input id="theirScoreTxt" type="text">
+                <input id="addResultBtn" type="submit" value="Add Result" class="pure-button pure-button-primary">
+                <p id="addResultError"></p>
+            </form>
+        </div>
+</template>

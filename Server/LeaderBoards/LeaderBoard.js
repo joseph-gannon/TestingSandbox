@@ -49,25 +49,35 @@
                 var yourWins = Meteor.user().profile.playerWins;
                 var yourLoses = Meteor.user().profile.playerLoses;
                 var yourGamesPlayed = Meteor.user().profile.gamesPlayed;
-
+                var opponentId = Meteor.users.findOne({username: opponentName}).username;
+                console.log(Meteor.users);
+                console.log("opponentID: "+opponentId);
                 //Updating Metrics - Need to still add opponent info
 
                 if(yourScore > theirScore)
                 {
-                    youWin = true;
+
                     var updateWins = yourWins+1;
                     Meteor.users.update({_id: Meteor.userId()},{ $set:{"profile.playerWins":yourWins+1, "profile.gamesPlayed": yourGamesPlayed+1}});
                     console.log("You Win!");
                     console.log("updated win record: "+Meteor.user().profile.playerWins);
+                    toastr.success("You Won! Good job, I Guess...");
+                    $("#addResultForm")[0].reset();
+                }
+                else if(yourScore == theirScore)
+                {
+                    toastr.error("LIAR! THERE ARE NO TIES IN PING PONG!");
                 }
                 else
                 {
                     console.log("You Lose!");
                     Meteor.users.update({_id: Meteor.userId()},{ $set:{"profile.playerLoses":yourLoses+1, "profile.gamesPlayed": yourGamesPlayed+1}});
+                    toastr.error("You Lose! Try and be better next time champ!");
+                    $("#addResultForm")[0].reset();
                 }
 
                 //clear fields
-                $("#addResultForm")[0].reset();
+
 
 
 

@@ -13,32 +13,5 @@ if(Meteor.isClient){
    console.log("Hello client");
 
 
-
-    Template.addPlayerForm.events
-    ({
-        'submit form' : function(event)
-        {
-            event.preventDefault();
-            var playerName = event.target.playerNameTxt.value;
-            var gamesPlayedVal = event.target.gamesPlayedTxt.value;
-            var myObj = document.getElementById("playerNameTxt");
-            toastr.options.positionClass = "toast-bottom-center";
-            if(playerName.match(/\S/))
-            {
-                PlayerList.insert({name:playerName,gamesPlayed:gamesPlayedVal});
-                event.target.playerNameTxt.setAttribute("text","");
-                event.target.gamesPlayedTxt.setAttribute("text","");
-                toastr.info(playerName+" Added Successfully!");
-            }
-            else
-            {
-                //document.getElementById("addPlayerError").innerHTML = "RAWR?";
-//                toastr.options.positionClass = "toast-bottom-center";
-                toastr.error("Invalid Player Name!");
-            }
-        }
-    });
-
-
 }
 

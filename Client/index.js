@@ -10,6 +10,7 @@ Router.configure({
 if(Meteor.isClient){
 //    PlayerList.insert({name: "Joe",gamesPlayed: 0});
 //    PlayerList.insert({name: "Ben", gamesPlayed: 0});
+// Testing Change for MSO UAT
    console.log("Hello client");
 
 
